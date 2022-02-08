@@ -17,6 +17,11 @@ let
 
       leaveDotGit = true;
     };
+
+    postBuild = ''
+      mkdir -p $out/rc
+      cp $src/kraft/.kraftrc $out/rc/kraftrc;
+    '';
   };
 in
 self
